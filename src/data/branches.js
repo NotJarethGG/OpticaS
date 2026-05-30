@@ -1,0 +1,32 @@
+export const branches = [
+  {
+    id: 'suc-centro',
+    name: 'Sanchún Centro',
+    address: 'Av. Central 1234, Centro Histórico',
+    city: 'Ciudad Capital',
+    phone: '+52 55 1234 5678',
+    hours: 'Lun–Sáb · 9:00–20:00',
+    mapsQuery: 'Av+Central+1234+Centro+Historico',
+    featured: true,
+  },
+  {
+    id: 'suc-norte',
+    name: 'Sanchún Plaza Norte',
+    address: 'Blvd. Norte 88, Plaza Aurora L-22',
+    city: 'Ciudad Capital',
+    phone: '+52 55 8765 4321',
+    hours: 'Lun–Dom · 11:00–21:00',
+    mapsQuery: 'Plaza+Aurora+Boulevard+Norte+88',
+    featured: false,
+  },
+  {
+    id: 'suc-sur',
+    name: 'Sanchún Sur',
+    address: 'Calzada del Sol 450, Col. Jardines',
+    city: 'Ciudad Capital',
+    phone: '+52 55 4567 8901',
+    hours: 'Lun–Sáb · 10:00–19:00',
+    mapsQuery: 'Calzada+del+Sol+450+Jardines',
+    featured: false,
+  },
+]

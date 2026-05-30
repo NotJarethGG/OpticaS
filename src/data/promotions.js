@@ -1,0 +1,38 @@
+export const promotions = [
+  {
+    id: 'promo-01',
+    title: '2x1 en Anteojos Oftálmicos',
+    description: 'Lleva dos monturas seleccionadas y paga solo una. Incluye lentes antirreflejo.',
+    discount: '50%',
+    badge: 'Más popular',
+    accent: 'from-brand-500 to-accent-400',
+    expires: '30 Jun',
+  },
+  {
+    id: 'promo-02',
+    title: 'Examen Visual Gratis',
+    description: 'Examen computarizado sin costo al comprar cualquier lente oftálmico.',
+    discount: 'GRATIS',
+    badge: 'Tiempo limitado',
+    accent: 'from-violet-500 to-brand-500',
+    expires: '15 Jul',
+  },
+  {
+    id: 'promo-03',
+    title: '30% en Gafas de Sol',
+    description: 'Toda la colección Sanchún Sun con protección UV400 polarizada.',
+    discount: '30%',
+    badge: 'Verano',
+    accent: 'from-amber-400 to-orange-500',
+    expires: '31 Ago',
+  },
+  {
+    id: 'promo-04',
+    title: 'Combo Lentes de Contacto',
+    description: 'Caja anual de lentes diarias + estuche premium y solución de regalo.',
+    discount: '25%',
+    badge: 'Combo',
+    accent: 'from-emerald-400 to-accent-500',
+    expires: '20 Jun',
+  },
+]

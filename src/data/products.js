@@ -1,0 +1,166 @@
+// Catálogo de productos de Óptica Sanchún (datos mock)
+// Las imágenes usan placeholders por gradiente generados con CSS para evitar dependencias externas.
+
+export const categories = {
+  oftalmicos: 'Anteojos Oftálmicos',
+  sol: 'Gafas de Sol',
+  contacto: 'Lentes de Contacto',
+}
+
+// En Óptica Sanchún el cliente elige el ARO y el lente se cotiza aparte:
+//   price    -> precio del aro (montura)
+//   lensFrom -> precio del lente monofocal desde
+//   total    -> aro + lente (referencia "desde")
+export const eyeglasses = [
+  {
+    id: 'of-01',
+    name: 'GG Acetate',
+    brand: 'Gucci',
+    category: 'oftalmicos',
+    price: 245,
+    lensFrom: 60,
+    stock: 14,
+    rating: 4.9,
+    tag: 'Premium',
+    colors: ['#0b1120', '#5d8a18', '#88705a'],
+    description: 'Montura de acetato italiano con detalle dorado y bisagras flex de alta gama.',
+  },
+  {
+    id: 'of-02',
+    name: 'All Star Acetate',
+    brand: 'Converse',
+    category: 'oftalmicos',
+    price: 119,
+    lensFrom: 45,
+    stock: 23,
+    rating: 4.7,
+    tag: 'Más vendido',
+    colors: ['#1f2937', '#5d8a18', '#b91c1c'],
+    description: 'Estilo juvenil y resistente, ideal para uso diario y rostros versátiles.',
+  },
+  {
+    id: 'of-03',
+    name: 'Titanium Flex',
+    brand: 'Alpi',
+    category: 'oftalmicos',
+    price: 159,
+    lensFrom: 50,
+    stock: 9,
+    rating: 4.8,
+    colors: ['#0e7490', '#111827', '#475569'],
+    description: 'Montura de titanio ultraligera de 11 g con varillas de memoria metálica.',
+  },
+  {
+    id: 'of-04',
+    name: 'Bold Round',
+    brand: 'Carrera',
+    category: 'oftalmicos',
+    price: 135,
+    lensFrom: 48,
+    stock: 31,
+    rating: 4.6,
+    tag: 'Oferta',
+    colors: ['#b45309', '#1f2937', '#155e75'],
+    description: 'Montura redonda atemporal con acabado mate y plaquetas anatómicas.',
+  },
+]
+
+export const sunglasses = [
+  {
+    id: 'so-01',
+    name: 'Solaris Pilot',
+    brand: 'Sanchún Sun',
+    category: 'sol',
+    price: 219,
+    stock: 12,
+    rating: 4.9,
+    tag: 'Premium',
+    colors: ['#b45309', '#0b1120', '#374151'],
+    description: 'Aviador polarizado con protección UV400 y lentes degradadas espejadas.',
+  },
+  {
+    id: 'so-02',
+    name: 'Wave Sport',
+    brand: 'Velox',
+    category: 'sol',
+    price: 169,
+    stock: 18,
+    rating: 4.8,
+    tag: 'Deportivo',
+    colors: ['#dc2626', '#0b1120', '#16a34a'],
+    description: 'Envolvente deportiva antiimpacto con goma antideslizante y ventilación.',
+  },
+  {
+    id: 'so-03',
+    name: 'Retro Square',
+    brand: 'Visio',
+    category: 'sol',
+    price: 139,
+    oldPrice: 175,
+    stock: 7,
+    rating: 4.7,
+    tag: 'Oferta',
+    colors: ['#0b1120', '#7c3aed', '#f59e0b'],
+    description: 'Cuadrada oversize de inspiración retro con filtro polarizado categoría 3.',
+  },
+  {
+    id: 'so-04',
+    name: 'Eclipse Cat',
+    brand: 'Sanchún Sun',
+    category: 'sol',
+    price: 199,
+    stock: 10,
+    rating: 4.8,
+    colors: ['#be123c', '#0b1120', '#a16207'],
+    description: 'Cat-eye elegante con varillas doradas y lentes con espejo flash.',
+  },
+]
+
+export const contactLenses = [
+  {
+    id: 'lc-01',
+    name: 'Pure Daily',
+    brand: 'Acuvue',
+    category: 'contacto',
+    price: 28,
+    stock: 120,
+    rating: 4.9,
+    type: 'Diarias',
+    description: 'Lentes diarias desechables con hidratación HydraLuxe para 16 h de confort.',
+  },
+  {
+    id: 'lc-02',
+    name: 'Aqua Monthly',
+    brand: 'Biofinity',
+    category: 'contacto',
+    price: 42,
+    stock: 80,
+    rating: 4.8,
+    type: 'Mensuales',
+    description: 'Silicona-hidrogel de alta oxigenación, ideal para uso continuo y miopía.',
+  },
+  {
+    id: 'lc-03',
+    name: 'Color Hazel',
+    brand: 'Air Optix',
+    category: 'contacto',
+    price: 49,
+    stock: 54,
+    rating: 4.7,
+    type: 'Cosméticas',
+    description: 'Lentes cosméticas mensuales que realzan el color natural del iris.',
+  },
+  {
+    id: 'lc-04',
+    name: 'Toric Vision',
+    brand: 'Biofinity',
+    category: 'contacto',
+    price: 58,
+    stock: 36,
+    rating: 4.8,
+    type: 'Astigmatismo',
+    description: 'Diseño tórico estabilizado para corrección precisa del astigmatismo.',
+  },
+]
+
+export const allProducts = [...eyeglasses, ...sunglasses, ...contactLenses]

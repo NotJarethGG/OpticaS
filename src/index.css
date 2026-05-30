@@ -1,0 +1,142 @@
+@import 'tailwindcss';
+
+/* Habilita el modo oscuro mediante la clase .dark en <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ----------------------------------------------------------------
+   Design Tokens — Óptica Sanchún
+   Marca: índigo profundo + cian tecnológico
+----------------------------------------------------------------- */
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-50: #f4faea;
+  --color-brand-100: #e6f4cd;
+  --color-brand-200: #cfe9a1;
+  --color-brand-300: #b1d96b;
+  --color-brand-400: #96c83f;
+  --color-brand-500: #77ab24;
+  --color-brand-600: #5d8a18;
+  --color-brand-700: #486a17;
+  --color-brand-800: #3b5518;
+  --color-brand-900: #324818;
+  --color-brand-950: #19280a;
+
+  --color-accent-50: #ecfdf5;
+  --color-accent-100: #d1fae5;
+  --color-accent-200: #a7f3d0;
+  --color-accent-300: #6ee7b7;
+  --color-accent-400: #34d399;
+  --color-accent-500: #10b981;
+  --color-accent-600: #059669;
+  --color-accent-700: #047857;
+  --color-accent-800: #065f46;
+  --color-accent-900: #064e3b;
+
+  --color-ink-50: #f6f7f9;
+  --color-ink-100: #eceef2;
+  --color-ink-200: #d4d9e3;
+  --color-ink-300: #aeb7ca;
+  --color-ink-400: #8290ab;
+  --color-ink-500: #647191;
+  --color-ink-600: #4f5a78;
+  --color-ink-700: #414961;
+  --color-ink-800: #393f52;
+  --color-ink-900: #0b1120;
+  --color-ink-950: #060912;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.75rem;
+
+  --shadow-soft: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px -8px rgba(16, 24, 40, 0.12);
+  --shadow-glow: 0 0 0 1px rgba(119, 171, 36, 0.1), 0 20px 60px -20px rgba(119, 171, 36, 0.5);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 9s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-pulse-ring: pulse-ring 3s ease-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(-1.5deg); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.85); opacity: 0.7; }
+  80%, 100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ----------------------------------------------------------------
+   Base
+----------------------------------------------------------------- */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-ink-50 text-ink-900 antialiased;
+    font-family: var(--font-sans);
+  }
+  html.dark body {
+    @apply bg-ink-950 text-ink-100;
+  }
+  ::selection {
+    @apply bg-brand-500/30;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+  /* Scrollbar fino */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-ink-300) transparent;
+  }
+  html.dark * {
+    scrollbar-color: var(--color-ink-700) transparent;
+  }
+}
+
+/* ----------------------------------------------------------------
+   Utilidades premium
+----------------------------------------------------------------- */
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40;
+  }
+  html.dark .glass {
+    @apply bg-ink-900/60 border-white/10;
+  }
+  .glass-strong {
+    @apply bg-white/85 backdrop-blur-2xl border border-white/50;
+  }
+  html.dark .glass-strong {
+    @apply bg-ink-900/80 border-white/10;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-600 via-brand-500 to-accent-400 bg-clip-text text-transparent;
+  }
+  html.dark .text-gradient {
+    @apply from-brand-300 via-accent-300 to-accent-200;
+  }
+  .ring-grid {
+    background-image:
+      linear-gradient(to right, rgba(119, 171, 36, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(119, 171, 36, 0.07) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
