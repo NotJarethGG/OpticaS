@@ -20,15 +20,18 @@ const sizes = {
   lg: 'h-13 px-8 text-base gap-2.5 py-3.5',
 }
 
+// Componentes de motion predefinidos (no se crean durante el render)
+const motionTags = { button: motion.button, a: motion.a, span: motion.span }
+
 export default function Button({
   children,
   variant = 'primary',
   size = 'md',
   className,
-  as: Tag = 'button',
+  as = 'button',
   ...props
 }) {
-  const MotionTag = motion(Tag)
+  const MotionTag = motionTags[as] || motion.button
   return (
     <MotionTag
       whileHover={{ y: -2 }}
