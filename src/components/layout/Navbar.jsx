@@ -73,7 +73,8 @@ export default function Navbar() {
             {/* Botón hamburguesa */}
             <button
               onClick={() => setOpen((v) => !v)}
-              aria-label="Abrir menú"
+              aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+              aria-expanded={open}
               className="grid h-10 w-10 place-items-center rounded-full glass text-ink-700 dark:text-white xl:hidden"
             >
               {open ? <X size={20} /> : <Menu size={20} />}

@@ -16,6 +16,16 @@
       rel="stylesheet"
     />
     <title>Óptica Sanchún · Tu visión merece la mejor tecnología</title>
+    <!-- Aplica el tema antes del primer render para evitar parpadeo (FOUC) -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('os-theme')
+          var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          if (dark) document.documentElement.classList.add('dark')
+        } catch (e) { /* localStorage no disponible */ }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
