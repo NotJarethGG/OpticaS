@@ -197,7 +197,7 @@ export default function Products() {
             <input
               type="color"
               value={form.colors[0]}
-              onChange={(e) => setForm((f) => ({ ...f, colors: [e.target.value, f.colors[1], e.target.value] }))}
+              onChange={(e) => setForm((f) => ({ ...f, colors: [e.target.value, e.target.value, e.target.value] }))}
               className="h-11 w-full cursor-pointer rounded-xl border border-ink-200/80 bg-white/70 dark:border-white/10 dark:bg-ink-900/60"
             />
           </Field>
